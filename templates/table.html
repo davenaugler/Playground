@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML Table w/ Flask</title>
+    <meta name="description" content="A really cool site!">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-striped table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Full Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in table_names: %}
+                        <tr>
+                            <td>
+                                {{ user['first_name'] }}
+                            </td>
+                            <td>
+                                {{ user['last_name'] }}
+                            </td>
+                            <td>
+                                {{ user['first_name'] }} {{ user['last_name'] }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
